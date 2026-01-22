@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JobFinder</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef6f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0f766e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0f766e;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        section {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #0f766e;
+        }
+
+        input {
+            padding: 8px;
+            width: 220px;
+        }
+
+        input[type="submit"] {
+            background-color: #f97316;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+        }
+
+        button {
+            background-color: #0f766e;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+        }
+
+        footer {
+            background-color: #0f766e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>JobFinder</h1>
+    <p>Your trusted job search platform</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Jobs</a>
+    <a href="#">Companies</a>
+    <a href="#">Post Resume</a>
+    <a href="#">Login</a>
+</nav>
+
+<!-- SEARCH MOVED TO TOP -->
+<section>
+    <h2 align="center">Search Jobs</h2>
+
+    <form align="center">
+        <input type="text" placeholder="Job title or keyword">
+        <input type="text" placeholder="Location">
+        <input type="submit" value="Search">
+    </form>
+</section>
+
+<!-- SIDE BY SIDE LAYOUT -->
+<section>
+    <table width="100%" cellpadding="20">
+        <tr valign="top">
+
+            <!-- LEFT: CATEGORIES -->
+            <td width="30%">
+                <h2>Job Categories</h2>
+                <ul>
+                    <li>IT & Software</li>
+                    <li>Marketing & Sales</li>
+                    <li>Finance</li>
+                    <li>HR</li>
+                    <li>Healthcare</li>
+                </ul>
+            </td>
+
+            <!-- RIGHT: FEATURED JOBS -->
+            <td width="70%">
+                <h2>Featured Jobs</h2>
+
+                <table width="100%" cellpadding="10" border="1">
+                    <tr>
+                        <td>
+                            <b>Software Engineer</b><br>
+                            TechNova Solutions<br>
+                            Bengaluru<br>
+                            Fresher<br><br>
+                            <button>Apply</button>
+                        </td>
+
+                        <td>
+                            <b>Digital Marketing</b><br>
+                            GrowthWave<br>
+                            Delhi<br>
+                            1–2 Years<br><br>
+                            <button>Apply</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Accounts Assistant</b><br>
+                            FinEdge Pvt Ltd<br>
+                            Mumbai<br>
+                            0–1 Year<br><br>
+                            <button>Apply</button>
+                        </td>
+
+                        <td>
+                            <b>HR Executive</b><br>
+                            PeopleFirst<br>
+                            Pune<br>
+                            Fresher<br><br>
+                            <button>Apply</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</section>
+
+<!-- TESTIMONIALS MOVED BELOW -->
+<section>
+    <h2>User Testimonials</h2>
+
+    <p><b>Rahul Sharma:</b> Got my first job within a month.</p>
+    <p><b>Anjali Verma:</b> Easy to use and genuine companies.</p>
+    <p><b>Mohit Kumar:</b> Best site for freshers.</p>
+</section>
+
+<!-- JOB ALERTS NEAR FOOTER -->
+<section>
+    <h2>Job Alerts</h2>
+    <form>
+        Email:
+        <input type="email" placeholder="Enter email">
+        <input type="submit" value="Subscribe">
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 JobFinder</p>
+</footer>
+
+</body>
+</html>
