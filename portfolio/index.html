@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        /* HEADING */
+        h1{
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+            background-color: #0f172a;
+            color: #38bdf8;
+            font-size: 42px;
+        }
+
+        /* TOP NAVBAR */
+        .top-nav{
+            background-color: #020617;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .top-nav a{
+            color: white;
+            margin: 0 18px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .top-nav a:hover{
+            color: #38bdf8;
+        }
+
+        main{
+            padding: 20px;
+        }
+
+        section{
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .projects{
+            display: flex;
+            gap: 15px;
+        }
+
+        .card{
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 50%;
+            background-color: #f8fafc;
+            border-radius: 6px;
+        }
+
+        footer{
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAME -->
+    <h1>Hardik Mehta</h1>
+
+    <!-- NAV BELOW NAME -->
+    <nav class="top-nav">
+        <a href="https://github.com">GITHUB</a>
+        <a href="https://leetcode.com">LEETCODE</a>
+        <a href="https://linkedin.com">LINKEDIN</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- INTRO -->
+        <section style="text-align:center;">
+            <img src="https://blog.hrflow.ai/content/images/2020/04/Full-Stack-Developer.jpg"
+                 style="height:160px; border-radius:10px;"><br><br>
+
+            <p style="font-size:24px;">
+                Welcome to my Portfolio <br>
+                <b>Full Stack Engineer | Student</b>
+            </p>
+        </section>
+
+        <!-- PROJECTS -->
+        <section>
+            <h2 style="color:#1e40af;">Projects</h2>
+
+            <div class="projects">
+                <div class="card">
+                    <h3>Hostel Management System</h3>
+                    <p>Manages hostel activities and records.</p>
+                </div>
+
+                <div class="card">
+                    <h3>PDF Update Tool</h3>
+                    <p>Allows users to update and modify PDF files easily.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section>
+            <h2 style="color:#1e40af;">Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <h2 style="color:#1e40af;">Education</h2>
+
+            <table border="1" cellpadding="8" width="100%">
+                <tr style="background-color:#bae6fd;">
+                    <th>Degree</th>
+                    <th>Specialisation</th>
+                    <th>Year</th>
+                    <th>Institute</th>
+                    <th>Grades</th>
+                </tr>
+                <tr>
+                    <td>BTech</td>
+                    <td>CSE</td>
+                    <td>2028</td>
+                    <td>CU</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>12th</td>
+                    <td>Non-Med</td>
+                    <td>2024</td>
+                    <td>CBSE</td>
+                    <td>9</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- CONTACT -->
+        <section>
+            <h2 style="color:#1e40af;">Contact Me</h2>
+
+            <form>
+                Name<br>
+                <input type="text"><br><br>
+
+                Email<br>
+                <input type="email"><br><br>
+
+                Reason<br>
+                <select>
+                    <option>Select</option>
+                    <option>Job</option>
+                    <option>Freelancing</option>
+                    <option>Training</option>
+                </select><br><br>
+
+                Feedback<br>
+                <textarea rows="4"></textarea><br><br>
+
+                <button>Submit</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 All Rights Reserved
+    </footer>
+
+</body>
+</html>
