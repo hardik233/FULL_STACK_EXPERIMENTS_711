@@ -5,53 +5,78 @@
     <title>JobFinder</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #eef6f6;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #eef6f6, #ffffff);
         }
 
         header {
-            background-color: #0f766e;
+            background: linear-gradient(135deg, #0f766e, #115e59);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
+        }
+
+        header h1 {
+            font-size: 32px;
         }
 
         nav {
-            background-color: #ffffff;
-            padding: 10px;
+            background: white;
             text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         nav a {
             text-decoration: none;
             color: #0f766e;
-            margin: 10px;
+            margin: 15px;
             font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f97316;
         }
 
         section {
-            background-color: white;
-            margin: 20px;
-            padding: 20px;
+            background: white;
+            margin: 25px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         h2 {
             color: #0f766e;
+            margin-bottom: 15px;
         }
 
         input {
-            padding: 8px;
+            padding: 10px;
             width: 220px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin: 5px;
         }
 
         input[type="submit"] {
             background-color: #f97316;
             color: white;
             border: none;
-            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ea580c;
         }
 
         button {
@@ -59,16 +84,65 @@
             color: white;
             border: none;
             padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #115e59;
+            transform: scale(1.05);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        .job-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            transition: 0.3s;
+        }
+
+        .job-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0f766e;
         }
 
         footer {
             background-color: #0f766e;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            table, tr, td {
+                display: block;
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -84,23 +158,18 @@
     <a href="#">Login</a>
 </nav>
 
-<!-- SEARCH MOVED TO TOP -->
 <section>
     <h2 align="center">Search Jobs</h2>
-
-    <form align="center">
-        <input type="text" placeholder="Job title or keyword">
-        <input type="text" placeholder="Location">
+    <form id="searchForm" align="center">
+        <input type="text" id="keyword" placeholder="Job title or keyword">
+        <input type="text" id="location" placeholder="Location">
         <input type="submit" value="Search">
     </form>
 </section>
 
-<!-- SIDE BY SIDE LAYOUT -->
 <section>
-    <table width="100%" cellpadding="20">
+    <table cellpadding="20">
         <tr valign="top">
-
-            <!-- LEFT: CATEGORIES -->
             <td width="30%">
                 <h2>Job Categories</h2>
                 <ul>
@@ -112,68 +181,70 @@
                 </ul>
             </td>
 
-            <!-- RIGHT: FEATURED JOBS -->
             <td width="70%">
                 <h2>Featured Jobs</h2>
-
-                <table width="100%" cellpadding="10" border="1">
+                <table cellpadding="10">
                     <tr>
                         <td>
-                            <b>Software Engineer</b><br>
-                            TechNova Solutions<br>
-                            Bengaluru<br>
-                            Fresher<br><br>
-                            <button>Apply</button>
+                            <div class="job-card">
+                                <div class="job-title">Software Engineer</div>
+                                TechNova Solutions<br>
+                                Bengaluru<br>
+                                Fresher<br><br>
+                                <button class="applyBtn">Apply</button>
+                            </div>
                         </td>
 
                         <td>
-                            <b>Digital Marketing</b><br>
-                            GrowthWave<br>
-                            Delhi<br>
-                            1–2 Years<br><br>
-                            <button>Apply</button>
+                            <div class="job-card">
+                                <div class="job-title">Digital Marketing</div>
+                                GrowthWave<br>
+                                Delhi<br>
+                                1–2 Years<br><br>
+                                <button class="applyBtn">Apply</button>
+                            </div>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <b>Accounts Assistant</b><br>
-                            FinEdge Pvt Ltd<br>
-                            Mumbai<br>
-                            0–1 Year<br><br>
-                            <button>Apply</button>
+                            <div class="job-card">
+                                <div class="job-title">Accounts Assistant</div>
+                                FinEdge Pvt Ltd<br>
+                                Mumbai<br>
+                                0–1 Year<br><br>
+                                <button class="applyBtn">Apply</button>
+                            </div>
                         </td>
 
                         <td>
-                            <b>HR Executive</b><br>
-                            PeopleFirst<br>
-                            Pune<br>
-                            Fresher<br><br>
-                            <button>Apply</button>
+                            <div class="job-card">
+                                <div class="job-title">HR Executive</div>
+                                PeopleFirst<br>
+                                Pune<br>
+                                Fresher<br><br>
+                                <button class="applyBtn">Apply</button>
+                            </div>
                         </td>
                     </tr>
                 </table>
-
             </td>
         </tr>
     </table>
 </section>
 
-<!-- TESTIMONIALS MOVED BELOW -->
 <section>
     <h2>User Testimonials</h2>
-
     <p><b>Rahul Sharma:</b> Got my first job within a month.</p>
     <p><b>Anjali Verma:</b> Easy to use and genuine companies.</p>
     <p><b>Mohit Kumar:</b> Best site for freshers.</p>
 </section>
 
-<!-- JOB ALERTS NEAR FOOTER -->
 <section>
     <h2>Job Alerts</h2>
-    <form>
+    <form id="emailForm">
         Email:
-        <input type="email" placeholder="Enter email">
+        <input type="email" id="emailInput" placeholder="Enter email">
         <input type="submit" value="Subscribe">
     </form>
 </section>
@@ -181,6 +252,39 @@
 <footer>
     <p>© 2026 JobFinder</p>
 </footer>
+
+<script>
+let applyButtons = document.querySelectorAll(".applyBtn");
+
+applyButtons.forEach(function(button){
+    button.addEventListener("click", function(){
+        alert("Application submitted successfully!");
+    });
+});
+
+document.getElementById("searchForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    let keyword = document.getElementById("keyword").value;
+    let location = document.getElementById("location").value;
+
+    if(keyword === "" && location === ""){
+        alert("Please enter search details!");
+    } else {
+        alert("Searching jobs for: " + keyword + " in " + location);
+    }
+});
+
+document.getElementById("emailForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    let email = document.getElementById("emailInput").value;
+
+    if(email === ""){
+        alert("Please enter your email!");
+    } else {
+        alert("Subscribed successfully!");
+    }
+});
+</script>
 
 </body>
 </html>
