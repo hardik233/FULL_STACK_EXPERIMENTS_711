@@ -1,289 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>JobFinder</title>
+<meta charset="UTF-8">
+<title>JobFinder</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #eef6f6, #ffffff);
-        }
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background:#f4f7f7;
+}
 
-        header {
-            background: linear-gradient(135deg, #0f766e, #115e59);
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
+header{
+    background:#0f766e;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
 
-        header h1 {
-            font-size: 32px;
-        }
+nav{
+    background:white;
+    text-align:center;
+    padding:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+}
 
-        nav {
-            background: white;
-            text-align: center;
-            padding: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+nav a{
+    text-decoration:none;
+    color:#0f766e;
+    margin:0 20px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #0f766e;
-            margin: 15px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+nav a:hover{
+    color:#f97316;
+}
 
-        nav a:hover {
-            color: #f97316;
-        }
+section{
+    padding:60px 20px;
+    text-align:center;
+}
 
-        section {
-            background: white;
-            margin: 25px;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
+h2{
+    color:#0f766e;
+    margin-bottom:25px;
+}
 
-        h2 {
-            color: #0f766e;
-            margin-bottom: 15px;
-        }
+input{
+    padding:12px;
+    width:220px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    margin:5px;
+}
 
-        input {
-            padding: 10px;
-            width: 220px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            margin: 5px;
-        }
+button, input[type="submit"]{
+    padding:12px 25px;
+    border:none;
+    border-radius:6px;
+    background:#f97316;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
 
-        input[type="submit"] {
-            background-color: #f97316;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+button:hover, input[type="submit"]:hover{
+    background:#ea580c;
+}
 
-        input[type="submit"]:hover {
-            background-color: #ea580c;
-        }
+.jobs-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+}
 
-        button {
-            background-color: #0f766e;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.job-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:left;
+}
 
-        button:hover {
-            background-color: #115e59;
-            transform: scale(1.05);
-        }
+.job-title{
+    font-weight:bold;
+    color:#0f766e;
+    margin-bottom:10px;
+}
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+.dropdown{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s ease;
+    background:#ffffff;
+}
 
-        td {
-            padding: 15px;
-            vertical-align: top;
-        }
+.dropdown ul{
+    list-style:none;
+    padding:20px;
+}
 
-        .job-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            transition: 0.3s;
-        }
+.dropdown li{
+    padding:8px 0;
+    font-weight:500;
+}
 
-        .job-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        .job-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #0f766e;
-        }
-
-        footer {
-            background-color: #0f766e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            table, tr, td {
-                display: block;
-                width: 100%;
-            }
-
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-    </style>
+footer{
+    background:#0f766e;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>JobFinder</h1>
-    <p>Your trusted job search platform</p>
+<h1>JobFinder</h1>
+<p>Your trusted job search platform</p>
 </header>
 
 <nav>
-    <a href="#">Home</a>
-    <a href="#">Jobs</a>
-    <a href="#">Companies</a>
-    <a href="#">Post Resume</a>
-    <a href="#">Login</a>
+<a onclick="scrollToSection('home')">Home</a>
+<a onclick="toggleDropdown()">Jobs</a>
+<a onclick="scrollToSection('companies')">Companies</a>
+<a onclick="scrollToSection('resume')">Post Resume</a>
+<a onclick="scrollToSection('login')">Login</a>
 </nav>
 
-<section>
-    <h2 align="center">Search Jobs</h2>
-    <form id="searchForm" align="center">
-        <input type="text" id="keyword" placeholder="Job title or keyword">
-        <input type="text" id="location" placeholder="Location">
-        <input type="submit" value="Search">
-    </form>
+<div class="dropdown" id="jobDropdown">
+<ul>
+<li>IT & Software</li>
+<li>Marketing & Sales</li>
+<li>Finance</li>
+<li>HR</li>
+<li>Healthcare</li>
+</ul>
+</div>
+
+<section id="home">
+<h2>Search Jobs</h2>
+<input type="text" placeholder="Job title or keyword">
+<input type="text" placeholder="Location">
+<input type="submit" value="Search">
 </section>
 
-<section>
-    <table cellpadding="20">
-        <tr valign="top">
-            <td width="30%">
-                <h2>Job Categories</h2>
-                <ul>
-                    <li>IT & Software</li>
-                    <li>Marketing & Sales</li>
-                    <li>Finance</li>
-                    <li>HR</li>
-                    <li>Healthcare</li>
-                </ul>
-            </td>
+<section id="jobs">
+<h2>Featured Jobs</h2>
+<div class="jobs-container">
 
-            <td width="70%">
-                <h2>Featured Jobs</h2>
-                <table cellpadding="10">
-                    <tr>
-                        <td>
-                            <div class="job-card">
-                                <div class="job-title">Software Engineer</div>
-                                TechNova Solutions<br>
-                                Bengaluru<br>
-                                Fresher<br><br>
-                                <button class="applyBtn">Apply</button>
-                            </div>
-                        </td>
+<div class="job-card">
+<div class="job-title">Software Engineer</div>
+TechNova Solutions<br>
+Bengaluru<br>
+Fresher<br><br>
+<button>Apply</button>
+</div>
 
-                        <td>
-                            <div class="job-card">
-                                <div class="job-title">Digital Marketing</div>
-                                GrowthWave<br>
-                                Delhi<br>
-                                1–2 Years<br><br>
-                                <button class="applyBtn">Apply</button>
-                            </div>
-                        </td>
-                    </tr>
+<div class="job-card">
+<div class="job-title">Digital Marketing</div>
+GrowthWave<br>
+Delhi<br>
+1–2 Years<br><br>
+<button>Apply</button>
+</div>
 
-                    <tr>
-                        <td>
-                            <div class="job-card">
-                                <div class="job-title">Accounts Assistant</div>
-                                FinEdge Pvt Ltd<br>
-                                Mumbai<br>
-                                0–1 Year<br><br>
-                                <button class="applyBtn">Apply</button>
-                            </div>
-                        </td>
+<div class="job-card">
+<div class="job-title">Accounts Assistant</div>
+FinEdge Pvt Ltd<br>
+Mumbai<br>
+0–1 Year<br><br>
+<button>Apply</button>
+</div>
 
-                        <td>
-                            <div class="job-card">
-                                <div class="job-title">HR Executive</div>
-                                PeopleFirst<br>
-                                Pune<br>
-                                Fresher<br><br>
-                                <button class="applyBtn">Apply</button>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+<div class="job-card">
+<div class="job-title">HR Executive</div>
+PeopleFirst<br>
+Pune<br>
+Fresher<br><br>
+<button>Apply</button>
+</div>
+
+</div>
 </section>
 
-<section>
-    <h2>User Testimonials</h2>
-    <p><b>Rahul Sharma:</b> Got my first job within a month.</p>
-    <p><b>Anjali Verma:</b> Easy to use and genuine companies.</p>
-    <p><b>Mohit Kumar:</b> Best site for freshers.</p>
+<section id="companies">
+<h2>Top Companies</h2>
+<p>TechNova | GrowthWave | FinEdge | PeopleFirst</p>
 </section>
 
-<section>
-    <h2>Job Alerts</h2>
-    <form id="emailForm">
-        Email:
-        <input type="email" id="emailInput" placeholder="Enter email">
-        <input type="submit" value="Subscribe">
-    </form>
+<section id="resume">
+<h2>Post Your Resume</h2>
+<button>Upload Resume</button>
+</section>
+
+<section id="login">
+<h2>Login</h2>
+<input type="text" placeholder="Username">
+<input type="password" placeholder="Password">
+<br><br>
+<button>Login</button>
 </section>
 
 <footer>
-    <p>© 2026 JobFinder</p>
+© 2026 JobFinder
 </footer>
 
 <script>
-let applyButtons = document.querySelectorAll(".applyBtn");
 
-applyButtons.forEach(function(button){
-    button.addEventListener("click", function(){
-        alert("Application submitted successfully!");
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({
+        behavior:'smooth'
+    });
+}
+
+function toggleDropdown(){
+    let dropdown = document.getElementById("jobDropdown");
+
+    if(dropdown.style.maxHeight){
+        dropdown.style.maxHeight = null;
+    } else {
+        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+    }
+}
+
+let buttons = document.querySelectorAll(".job-card button");
+buttons.forEach(btn=>{
+    btn.addEventListener("click", function(){
+        alert("Application Submitted Successfully!");
     });
 });
 
-document.getElementById("searchForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    let keyword = document.getElementById("keyword").value;
-    let location = document.getElementById("location").value;
-
-    if(keyword === "" && location === ""){
-        alert("Please enter search details!");
-    } else {
-        alert("Searching jobs for: " + keyword + " in " + location);
-    }
-});
-
-document.getElementById("emailForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    let email = document.getElementById("emailInput").value;
-
-    if(email === ""){
-        alert("Please enter your email!");
-    } else {
-        alert("Subscribed successfully!");
-    }
-});
 </script>
 
 </body>
