@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Segoe UI;
+}
+
+body {
+  background: #f4f7f8;
+}
+
+header {
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+.search-box {
+  margin-top: 20px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+button {
+  padding: 12px 20px;
+  background: #f97316;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #ea580c;
+}
+
+nav {
+  background: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: #0f766e;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #f97316;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #0f766e;
+  margin-bottom: 30px;
+}
+
+.jobs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.job-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #0f766e;
+  margin-bottom: 10px;
+}
+
+.companies {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  font-weight: bold;
+  color: #555;
+}
+
+.login-box {
+  max-width: 300px;
+  margin: auto;
+}
+
+footer {
+  background: #0f766e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
