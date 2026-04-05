@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>JobFinder Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>JobFinder</h1>
+<p>Your trusted job search platform</p>
+
+<div class="search-box">
+<input type="text" id="jobInput" placeholder="Job title">
+<input type="text" id="locationInput" placeholder="Location">
+<button onclick="searchJobs()">Search</button>
+</div>
+
+</header>
+
+<nav>
+<a onclick="scrollToSection('jobs')">Jobs</a>
+<a onclick="scrollToSection('companies')">Companies</a>
+<a onclick="scrollToSection('resume')">Post Resume</a>
+<a onclick="scrollToSection('login')">Login</a>
+</nav>
+
+<section id="jobs">
+
+<h2>Featured Jobs</h2>
+
+<div class="jobs-container">
+
+<div class="job-card" data-title="software engineer" data-location="bengaluru">
+<div class="job-title">Software Engineer</div>
+TechNova Solutions<br>
+Bengaluru<br>
+Fresher<br><br>
+<button onclick="applyJob()">Apply</button>
+</div>
+
+<div class="job-card" data-title="digital marketing" data-location="delhi">
+<div class="job-title">Digital Marketing</div>
+GrowthWave<br>
+Delhi<br>
+1-2 Years<br><br>
+<button onclick="applyJob()">Apply</button>
+</div>
+
+<div class="job-card" data-title="accounts assistant" data-location="mumbai">
+<div class="job-title">Accounts Assistant</div>
+FinEdge Pvt Ltd<br>
+Mumbai<br>
+0-1 Year<br><br>
+<button onclick="applyJob()">Apply</button>
+</div>
+
+<div class="job-card" data-title="hr executive" data-location="pune">
+<div class="job-title">HR Executive</div>
+PeopleFirst<br>
+Pune<br>
+Fresher<br><br>
+<button onclick="applyJob()">Apply</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="companies">
+
+<h2>Top Companies</h2>
+
+<div class="companies">
+<div>TechNova</div>
+<div>GrowthWave</div>
+<div>FinEdge</div>
+<div>PeopleFirst</div>
+</div>
+
+</section>
+
+<section id="resume">
+
+<h2>Upload Resume</h2>
+
+<input type="file" id="resumeFile">
+<br><br>
+
+<button onclick="uploadResume()">Upload Resume</button>
+
+<p id="resumeMsg"></p>
+
+</section>
+
+<section id="login">
+
+<h2>Login</h2>
+
+<div class="login-box">
+
+<input type="text" id="username" placeholder="Username">
+<br><br>
+
+<input type="password" id="password" placeholder="Password">
+<br><br>
+
+<button onclick="login()">Login</button>
+
+<p id="loginMsg"></p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 JobFinder Portal
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
