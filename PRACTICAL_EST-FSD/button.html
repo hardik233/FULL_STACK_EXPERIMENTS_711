@@ -1,0 +1,24 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Date & Time Example</title>
+</head>
+<body>
+
+    <h2>Click the button to see current Date & Time</h2>
+
+    <!-- Button -->
+    <button onclick="showDateTime()">Show Date & Time</button>
+
+    <!-- Area to display result -->
+    <p id="result"></p>
+
+    <script>
+        function showDateTime() {
+            let current = new Date(); // get current date & time
+            document.getElementById("result").innerHTML = current;
+        }
+    </script>
+
+</body>
+</html>
